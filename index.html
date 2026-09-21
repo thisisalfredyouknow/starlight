@@ -8,30 +8,176 @@
         * {
             box-sizing: border-box;
         }
-        body {
+        html, body {
             margin: 0;
-            min-height: 100vh;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: #050817;
+            color: white;
+        }
+        /* =========================
+           NIGHT INTRO
+        ========================= */
+        #intro {
+            position: fixed;
+            inset: 0;
+            z-index: 10;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    to bottom,
+                    #030615 0%,
+                    #0b1230 48%,
+                    #111936 100%
+                );
+            animation: introFade 5s forwards;
+            pointer-events: none;
+        }
+        /* Stars */
+        .stars {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(circle, white 1px, transparent 1px),
+                radial-gradient(circle, white 1px, transparent 1px),
+                radial-gradient(circle, white 1px, transparent 1px);
+            background-size:
+                150px 150px,
+                220px 220px,
+                310px 310px;
+            background-position:
+                20px 30px,
+                90px 120px,
+                180px 60px;
+            opacity: 0.55;
+        }
+        /* Moon */
+        .moon {
+            position: absolute;
+            width: 145px;
+            height: 145px;
+            border-radius: 50%;
+            background:
+                radial-gradient(
+                    circle at 35% 35%,
+                    #ffffff,
+                    #f5f2df 55%,
+                    #d8d4bd 100%
+                );
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow:
+                0 0 25px rgba(255,255,230,0.8),
+                0 0 70px rgba(190,210,255,0.35);
+            animation: moonAppear 3s ease-out forwards;
+        }
+        /* Ocean */
+        .ocean {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 48%;
+            background:
+                linear-gradient(
+                    to bottom,
+                    #101b3a,
+                    #071027
+                );
+        }
+        /* Moon reflection */
+        .reflection {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100px;
+            height: 100%;
+            transform: translateX(-50%);
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(255,255,230,0.35),
+                    rgba(255,255,230,0.08),
+                    transparent
+                );
+            filter: blur(10px);
+            animation: reflectionMove 2.5s ease-in-out infinite;
+        }
+        /* Waves */
+        .wave {
+            position: absolute;
+            left: -10%;
+            width: 120%;
+            height: 70px;
+            border-radius: 50%;
+            border-top:
+                2px solid rgba(255,255,255,0.13);
+            animation:
+                waveMove 5s ease-in-out infinite;
+        }
+        .wave1 {
+            top: 18%;
+            animation-delay: 0s;
+        }
+        .wave2 {
+            top: 38%;
+            animation-delay: 1s;
+            opacity: 0.6;
+        }
+        .wave3 {
+            top: 60%;
+            animation-delay: 2s;
+            opacity: 0.4;
+        }
+        .wave4 {
+            top: 80%;
+            animation-delay: 0.7s;
+            opacity: 0.25;
+        }
+        /* Intro title */
+        .introText {
+            position: absolute;
+            left: 50%;
+            top: 65%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 34px;
+            letter-spacing: 7px;
+            opacity: 0;
+            animation:
+                textAppear 2s 1.5s forwards;
+        }
+        /* =========================
+           LOGIN
+        ========================= */
+        #loginPage {
+            position: absolute;
+            inset: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(
-                135deg,
-                #0f1020,
-                #1d1633
-            );
-            font-family: Arial, sans-serif;
-            color: white;
+            opacity: 0;
+            animation:
+                loginAppear 1.5s 4.5s forwards;
         }
         .container {
             width: 90%;
             max-width: 380px;
             padding: 35px;
-            background: rgba(255, 255, 255, 0.08);
+            background:
+                rgba(255,255,255,0.08);
+            border:
+                1px solid rgba(255,255,255,0.12);
             border-radius: 25px;
             text-align: center;
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(18px);
             box-shadow:
-                0 20px 50px rgba(0, 0, 0, 0.35);
+                0 20px 60px rgba(0,0,0,0.45);
         }
         h1 {
             font-size: 38px;
@@ -58,8 +204,10 @@
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
+            transition: 0.3s;
         }
         button:hover {
+            transform: scale(1.03);
             opacity: 0.9;
         }
         #error {
@@ -67,8 +215,15 @@
             margin-top: 15px;
             display: none;
         }
+        /* =========================
+           SECRET PAGE
+        ========================= */
         #secretPage {
+            position: absolute;
+            inset: 0;
             display: none;
+            justify-content: center;
+            align-items: center;
         }
         .heart {
             font-size: 100px;
@@ -80,6 +235,79 @@
         }
         audio {
             width: 100%;
+        }
+        /* =========================
+           ANIMATIONS
+        ========================= */
+        @keyframes moonAppear {
+            0% {
+                transform:
+                    translateX(-50%)
+                    scale(0.3);
+                opacity: 0;
+            }
+            100% {
+                transform:
+                    translateX(-50%)
+                    scale(1);
+                opacity: 1;
+            }
+        }
+        @keyframes reflectionMove {
+            0%, 100% {
+                transform:
+                    translateX(-50%)
+                    scaleX(0.8);
+            }
+            50% {
+                transform:
+                    translateX(-50%)
+                    scaleX(1.25);
+            }
+        }
+        @keyframes waveMove {
+            0%, 100% {
+                transform:
+                    translateX(-2%)
+                    rotate(0deg);
+            }
+            50% {
+                transform:
+                    translateX(2%)
+                    rotate(1deg);
+            }
+        }
+        @keyframes textAppear {
+            0% {
+                opacity: 0;
+                transform:
+                    translate(-50%, -50%)
+                    translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform:
+                    translate(-50%, -50%)
+                    translateY(0);
+            }
+        }
+        @keyframes introFade {
+            0%, 82% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        @keyframes loginAppear {
+            0% {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         @keyframes heartbeat {
             0% {
@@ -104,74 +332,118 @@
     </style>
 </head>
 <body>
-    <!-- LOGIN PAGE -->
-    <div
-        class="container"
-        id="loginPage"
-    >
-        <h1>
-            Starlight
-        </h1>
-        <input
-            type="text"
-            id="username"
-            placeholder="Username"
-        >
-        <input
-            type="password"
-            id="password"
-            placeholder="Password"
-        >
-        <button
-            onclick="login()"
-        >
-            Enter
-        </button>
-        <div id="error">
-            Wrong username or password.
+    <!-- =========================
+         NIGHT INTRO
+    ========================= -->
+    <div id="intro">
+        <div class="stars"></div>
+        <div class="moon"></div>
+        <div class="ocean">
+            <div class="reflection"></div>
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+            <div class="wave wave4"></div>
+        </div>
+        <div class="introText">
+            STARLIGHT
         </div>
     </div>
-    <!-- SECRET PAGE -->
-    <div
-        class="container"
-        id="secretPage"
-    >
-        <h1>
-            Welcome ❤️
-        </h1>
-        <div class="heart">
-            ❤️
-        </div>
-        <div class="music">
-            <audio controls>
-                <source
-                    src="Ludwig van Beethoven - Moonlight Sonata.mp3"
-                    type="audio/mpeg"
-                >
-                Your browser does not support audio.
-            </audio>
+    <!-- =========================
+         LOGIN PAGE
+    ========================= -->
+    <div id="loginPage">
+        <div class="container">
+            <h1>
+                Starlight
+            </h1>
+            <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                autocomplete="off"
+            >
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+            >
+            <button onclick="login()">
+                Enter
+            </button>
+            <div id="error">
+                Wrong username or password.
+            </div>
         </div>
     </div>
+    <!-- =========================
+         SECRET PAGE
+    ========================= -->
+    <div id="secretPage">
+        <div class="container">
+            <h1>
+                Welcome ❤️
+            </h1>
+            <div class="heart">
+                ❤️
+            </div>
+            <div class="music">
+                <audio controls>
+                    <source
+                        src="moonlight.mp3"
+                        type="audio/mpeg"
+                    >
+                    Your browser does not support audio.
+                </audio>
+            </div>
+        </div>
+    </div>
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
     <script>
         function login() {
             const username =
-                document.getElementById("username").value;
+                document
+                .getElementById("username")
+                .value
+                .trim();
             const password =
-                document.getElementById("password").value;
+                document
+                .getElementById("password")
+                .value
+                .trim();
             if (
                 username === "Starlight" &&
                 password === "Starlight"
             ) {
-                document.getElementById("loginPage").style.display =
-                    "none";
-                document.getElementById("secretPage").style.display =
-                    "block";
+                document
+                .getElementById("loginPage")
+                .style.display = "none";
+                document
+                .getElementById("secretPage")
+                .style.display = "flex";
+                document
+                .getElementById("intro")
+                .style.display = "none";
             }
             else {
-                document.getElementById("error").style.display =
-                    "block";
+                document
+                .getElementById("error")
+                .style.display = "block";
             }
         }
+        /* Enter key */
+        document
+        .getElementById("password")
+        .addEventListener(
+            "keydown",
+            function(event) {
+                if (event.key === "Enter") {
+                    login();
+                }
+            }
+        );
     </script>
 </body>
 </html>
