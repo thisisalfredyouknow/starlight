@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,8 @@
                     #0b1230 48%,
                     #111936 100%
                 );
-            animation: introFade 5s forwards;
+            animation:
+                introFade 5s forwards;
             pointer-events: none;
         }
         /* Stars */
@@ -74,7 +75,8 @@
             box-shadow:
                 0 0 25px rgba(255,255,230,0.8),
                 0 0 70px rgba(190,210,255,0.35);
-            animation: moonAppear 3s ease-out forwards;
+            animation:
+                moonAppear 3s ease-out forwards;
         }
         /* Ocean */
         .ocean {
@@ -106,7 +108,8 @@
                     transparent
                 );
             filter: blur(10px);
-            animation: reflectionMove 2.5s ease-in-out infinite;
+            animation:
+                reflectionMove 2.5s ease-in-out infinite;
         }
         /* Waves */
         .wave {
@@ -122,7 +125,6 @@
         }
         .wave1 {
             top: 18%;
-            animation-delay: 0s;
         }
         .wave2 {
             top: 38%;
@@ -144,7 +146,8 @@
             position: absolute;
             left: 50%;
             top: 65%;
-            transform: translate(-50%, -50%);
+            transform:
+                translate(-50%, -50%);
             text-align: center;
             font-size: 34px;
             letter-spacing: 7px;
@@ -175,7 +178,8 @@
                 1px solid rgba(255,255,255,0.12);
             border-radius: 25px;
             text-align: center;
-            backdrop-filter: blur(18px);
+            backdrop-filter:
+                blur(18px);
             box-shadow:
                 0 20px 60px rgba(0,0,0,0.45);
         }
@@ -229,12 +233,6 @@
             font-size: 100px;
             animation:
                 heartbeat 1.2s infinite;
-        }
-        .music {
-            margin-top: 30px;
-        }
-        audio {
-            width: 100%;
         }
         /* =========================
            ANIMATIONS
@@ -302,11 +300,13 @@
         @keyframes loginAppear {
             0% {
                 opacity: 0;
-                transform: translateY(25px);
+                transform:
+                    translateY(25px);
             }
             100% {
                 opacity: 1;
-                transform: translateY(0);
+                transform:
+                    translateY(0);
             }
         }
         @keyframes heartbeat {
@@ -382,19 +382,10 @@
     <div id="secretPage">
         <div class="container">
             <h1>
-                Welcome ❤️
+                خوش اومدی ❤️
             </h1>
             <div class="heart">
                 ❤️
-            </div>
-            <div class="music">
-                <audio controls>
-                    <source
-                        src="moonlight.mp3"
-                        type="audio/mpeg"
-                    >
-                    Your browser does not support audio.
-                </audio>
             </div>
         </div>
     </div>
