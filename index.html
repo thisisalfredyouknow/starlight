@@ -9,13 +9,13 @@
         @font-face {
             font-family: "Vazir";
             src: url("https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/Vazir.woff2")
-            format("woff2");
+                format("woff2");
             font-weight: normal;
         }
         @font-face {
             font-family: "Vazir";
             src: url("https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/Vazir-Bold.woff2")
-            format("woff2");
+                format("woff2");
             font-weight: bold;
         }
         * {
@@ -29,7 +29,11 @@
             overflow: hidden;
         }
         body {
-            font-family: "Vazir", Tahoma, Arial, sans-serif;
+            font-family:
+                "Vazir",
+                Tahoma,
+                Arial,
+                sans-serif;
             color: white;
             background:
                 linear-gradient(
@@ -44,9 +48,9 @@
             animation:
                 colorfulBackground 12s ease infinite;
         }
-        /* =================================
+        /* =========================================
            INTRO
-        ================================= */
+        ========================================= */
         #intro {
             position: fixed;
             inset: 0;
@@ -94,9 +98,6 @@
             animation:
                 starsMove 7s linear infinite;
         }
-        /* =================================
-           CUTE STARS
-        ================================= */
         .cute-stars {
             position: absolute;
             inset: 0;
@@ -127,7 +128,7 @@
         .star4 {
             top: 15%;
             left: 65%;
-            color: #ffffff;
+            color: white;
             animation-delay: .4s;
         }
         .star5 {
@@ -154,9 +155,9 @@
             color: #8fd3ff;
             animation-delay: 1.5s;
         }
-        /* =================================
+        /* =========================================
            SCHOOL ICONS
-        ================================= */
+        ========================================= */
         .school-icons {
             position: absolute;
             inset: 0;
@@ -221,9 +222,9 @@
             right: 30%;
             animation-delay: 2.2s;
         }
-        /* =================================
+        /* =========================================
            MOON
-        ================================= */
+        ========================================= */
         .moon {
             position: absolute;
             width: 145px;
@@ -246,9 +247,9 @@
             animation:
                 moonAppear 3s ease-out forwards;
         }
-        /* =================================
+        /* =========================================
            OCEAN
-        ================================= */
+        ========================================= */
         .ocean {
             position: absolute;
             bottom: 0;
@@ -308,17 +309,18 @@
             top: 80%;
             animation-delay: .7s;
         }
-        /* =================================
+        /* =========================================
            INTRO TEXT
-        ================================= */
+        ========================================= */
         .introText {
             position: absolute;
             left: 50%;
             top: 65%;
             transform:
                 translate(-50%, -50%);
-            text-align: center;
-            font-family: Arial, sans-serif;
+            font-family:
+                Arial,
+                sans-serif;
             font-size: 36px;
             letter-spacing: 8px;
             direction: ltr;
@@ -328,9 +330,9 @@
             animation:
                 textAppear 2s 1.5s forwards;
         }
-        /* =================================
-           LOGIN PAGE
-        ================================= */
+        /* =========================================
+           LOGIN
+        ========================================= */
         #loginPage {
             position: absolute;
             inset: 0;
@@ -366,7 +368,7 @@
             animation:
                 floatIcon 3s ease-in-out infinite;
         }
-        h1 {
+        #loginPage h1 {
             font-size: 38px;
             margin:
                 5px 0 28px;
@@ -392,11 +394,13 @@
             transition: .3s;
         }
         input:focus {
-            border-color: #ff82c8;
+            border-color:
+                #ff82c8;
             transform:
                 translateY(-2px);
             box-shadow:
-                0 5px 20px rgba(255,100,190,.25);
+                0 5px 20px
+                rgba(255,100,190,.25);
         }
         button {
             width: 100%;
@@ -420,7 +424,8 @@
             font-weight: bold;
             cursor: pointer;
             box-shadow:
-                0 8px 25px rgba(150,90,220,.35);
+                0 8px 25px
+                rgba(150,90,220,.35);
             transition: .3s;
         }
         button:hover {
@@ -429,15 +434,16 @@
                 scale(1.02);
         }
         #error {
-            color: #ffdddd;
+            color:
+                #ffdddd;
             margin-top: 15px;
             display: none;
             font-size: 14px;
         }
-        /* =================================
-           SECRET PAGE
-        ================================= */
-        #secretPage {
+        /* =========================================
+           SURPRISE PAGE
+        ========================================= */
+        #surprisePage {
             position: absolute;
             inset: 0;
             display: none;
@@ -453,38 +459,198 @@
                     #84fab0,
                     #8fd3f4
                 );
-            background-size: 400% 400%;
+            background-size:
+                400% 400%;
             animation:
                 colorfulBackground 10s ease infinite;
         }
-        #secretPage .container {
-            position: relative;
-            z-index: 5;
+        /* =========================================
+           ENVELOPE
+        ========================================= */
+        .envelope-area {
+            text-align: center;
+            animation:
+                envelopeAppear 1.2s ease-out forwards;
         }
-        #secretPage h1 {
+        .envelope-hint {
+            font-size: 23px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-shadow:
+                0 3px 12px rgba(0,0,0,.18);
+            animation:
+                hintFloat 2s ease-in-out infinite;
+        }
+        .envelope {
+            position: relative;
+            width: 280px;
+            height: 190px;
+            margin: auto;
+            cursor: pointer;
+            filter:
+                drop-shadow(
+                    0 20px 30px
+                    rgba(70,30,100,.25)
+                );
+            transition:
+                transform .4s ease;
+        }
+        .envelope:hover {
+            transform:
+                translateY(-8px)
+                scale(1.04);
+        }
+        .envelope-back {
+            position: absolute;
+            inset: 0;
+            border-radius:
+                15px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff6fae,
+                    #ff9bc9
+                );
+            box-shadow:
+                inset 0 0 0 3px
+                rgba(255,255,255,.25);
+        }
+        .envelope-paper {
+            position: absolute;
+            left: 25px;
+            right: 25px;
+            bottom: 18px;
+            height: 150px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #fffdf8,
+                    #fff4fb
+                );
+            border-radius:
+                10px;
+            z-index: 1;
+            transition:
+                transform .8s ease;
+        }
+        .envelope-front {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left:
+                140px solid transparent;
+            border-right:
+                140px solid transparent;
+            border-bottom:
+                100px solid #ff5f9e;
+            z-index: 3;
+        }
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left:
+                140px solid transparent;
+            border-right:
+                140px solid transparent;
+            border-top:
+                100px solid #ff87bb;
+            transform-origin:
+                top center;
+            z-index: 4;
+            transition:
+                transform .8s ease;
+        }
+        .envelope-heart {
+            position: absolute;
+            z-index: 5;
+            left: 50%;
+            top: 50%;
+            transform:
+                translate(-50%, -50%);
+            font-size: 48px;
+            transition:
+                opacity .4s;
+        }
+        /* وقتی پاکت باز میشه */
+        .envelope.open
+        .envelope-flap {
+            transform:
+                rotateX(180deg);
+        }
+        .envelope.open
+        .envelope-paper {
+            transform:
+                translateY(-105px);
+        }
+        .envelope.open
+        .envelope-heart {
+            opacity: 0;
+        }
+        /* =========================================
+           FINAL MESSAGE
+        ========================================= */
+        #finalMessage {
+            position: absolute;
+            inset: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 25px;
+            animation:
+                finalMessageAppear 1.5s ease forwards;
+        }
+        .final-card {
+            width: 90%;
+            max-width: 600px;
+            padding:
+                45px 30px;
+            border-radius:
+                30px;
+            background:
+                rgba(255,255,255,.25);
+            border:
+                2px solid
+                rgba(255,255,255,.5);
+            backdrop-filter:
+                blur(20px);
+            box-shadow:
+                0 30px 80px
+                rgba(60,30,100,.25);
+        }
+        .final-card h1 {
             font-family:
                 "Vazir",
                 Tahoma,
-                Arial,
                 sans-serif;
-            font-size: 28px;
-            line-height: 2;
-            letter-spacing: 0;
-            margin:
-                0 0 20px;
+            font-size:
+                clamp(24px, 5vw, 38px);
+            line-height:
+                2;
+            margin: 0;
+            color: white;
+            text-shadow:
+                0 4px 15px
+                rgba(70,20,90,.2);
         }
-        .heart {
-            font-size: 100px;
+        .final-heart {
+            font-size: 95px;
+            margin-top: 15px;
             animation:
                 heartbeat 1.2s infinite;
         }
-        /* =================================
+        /* =========================================
            CELEBRATION
-        ================================= */
+        ========================================= */
         #celebration {
             position: fixed;
             inset: 0;
-            z-index: 20;
+            z-index: 200;
             pointer-events: none;
             overflow: hidden;
             display: none;
@@ -496,253 +662,43 @@
             height: 20px;
             opacity: .95;
             animation:
-                confettiFall linear forwards;
+                confettiFall
+                linear
+                forwards;
         }
         .celebration-heart {
             position: absolute;
             bottom: -50px;
             font-size: 30px;
             animation:
-                heartFloat 4s ease-out forwards;
+                heartFloat
+                4s ease-out
+                forwards;
         }
         .celebration-star {
             position: absolute;
             bottom: -40px;
             font-size: 25px;
             animation:
-                starFloat 3.5s ease-out forwards;
+                starFloat
+                3.5s ease-out
+                forwards;
         }
-        /* =================================
-           SURPRISE ENVELOPE
-        ================================= */
-        #surprise {
-            position: fixed;
-            inset: 0;
-            z-index: 30;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255,154,158,.96),
-                    rgba(161,140,209,.96),
-                    rgba(132,250,176,.96)
-                );
-            background-size: 300% 300%;
-            animation:
-                colorfulBackground 9s ease infinite;
-            opacity: 0;
-        }
-        #surprise.show {
-            display: flex;
-            animation:
-                surpriseAppear 1s ease forwards,
-                colorfulBackground 9s ease infinite;
-        }
-        .surprise-title {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 28px;
-            text-shadow:
-                0 3px 15px rgba(0,0,0,.15);
-        }
-        .envelope-wrapper {
-            position: relative;
-            width: 270px;
-            height: 190px;
-            cursor: pointer;
-            transition: .3s;
-        }
-        .envelope-wrapper:hover {
-            transform:
-                translateY(-8px)
-                scale(1.04);
-        }
-        .envelope {
-            position: absolute;
-            width: 270px;
-            height: 175px;
-            bottom: 0;
-            background:
-                linear-gradient(
-                    135deg,
-                    #ff80ab,
-                    #ffb4d2
-                );
-            border-radius:
-                10px 10px 18px 18px;
-            box-shadow:
-                0 20px 50px rgba(90,30,100,.3);
-        }
-        /* نامه داخل پاکت */
-        .letter {
-            position: absolute;
-            left: 50%;
-            bottom: 25px;
-            width: 220px;
-            height: 150px;
-            transform:
-                translateX(-50%);
-            background: #fffdf7;
-            border-radius: 8px;
-            box-shadow:
-                0 5px 20px rgba(0,0,0,.12);
-            transition:
-                .8s ease;
-            z-index: 1;
-        }
-        .letter::before {
-            content: "💌";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform:
-                translate(-50%, -50%);
-            font-size: 45px;
-        }
-        /* قسمت جلویی پاکت */
-        .envelope-front {
-            position: absolute;
-            inset: 0;
-            z-index: 3;
-            overflow: hidden;
-            border-radius:
-                10px 10px 18px 18px;
-            background:
-                linear-gradient(
-                    135deg,
-                    #ff80ab,
-                    #ff9fc2
-                );
-            clip-path:
-                polygon(
-                    0 0,
-                    50% 55%,
-                    100% 0,
-                    100% 100%,
-                    0 100%
-                );
-        }
-        /* در پاکت */
-        .envelope-flap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 105px;
-            background:
-                linear-gradient(
-                    135deg,
-                    #ffb4d2,
-                    #ff80ab
-                );
-            clip-path:
-                polygon(
-                    0 0,
-                    100% 0,
-                    50% 100%
-                );
-            transform-origin:
-                top center;
-            transition:
-                transform .8s ease;
-            z-index: 4;
-        }
-        .envelope-wrapper.open
-        .envelope-flap {
-            transform:
-                rotateX(180deg);
-        }
-        .envelope-wrapper.open
-        .letter {
-            transform:
-                translateX(-50%)
-                translateY(-105px);
-        }
-        .click-hint {
-            margin-top: 25px;
-            font-size: 15px;
-            opacity: .9;
-            animation:
-                hintPulse 1.5s infinite;
-        }
-        /* =================================
-           FINAL MESSAGE
-        ================================= */
-        #finalMessage {
-            position: fixed;
-            inset: 0;
-            z-index: 50;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background:
-                linear-gradient(
-                    135deg,
-                    #ff9a9e,
-                    #fad0c4,
-                    #a18cd1,
-                    #84fab0,
-                    #8fd3f4
-                );
-            background-size: 400% 400%;
-            animation:
-                colorfulBackground 10s ease infinite;
-            padding: 25px;
-        }
-        #finalMessage.show {
-            display: flex;
-            animation:
-                finalAppear 1.3s ease forwards,
-                colorfulBackground 10s ease infinite;
-        }
-        .final-card {
-            max-width: 650px;
-            width: 92%;
-            padding: 45px 30px;
-            background:
-                rgba(255,255,255,.25);
-            border:
-                2px solid rgba(255,255,255,.5);
-            border-radius: 35px;
-            backdrop-filter:
-                blur(20px);
-            box-shadow:
-                0 30px 80px rgba(70,30,100,.25);
-        }
-        .final-card .big-heart {
-            font-size: 90px;
-            margin-bottom: 15px;
-            animation:
-                heartbeat 1.2s infinite;
-        }
-        .final-card h2 {
-            margin: 0;
-            font-family:
-                "Vazir",
-                Tahoma,
-                sans-serif;
-            font-size: 31px;
-            line-height: 2;
-            color: white;
-            text-shadow:
-                0 3px 15px rgba(0,0,0,.15);
-        }
-        /* =================================
+        /* =========================================
            ANIMATIONS
-        ================================= */
+        ========================================= */
         @keyframes colorfulBackground {
             0% {
-                background-position: 0% 50%;
+                background-position:
+                    0% 50%;
             }
             50% {
-                background-position: 100% 50%;
+                background-position:
+                    100% 50%;
             }
             100% {
-                background-position: 0% 50%;
+                background-position:
+                    0% 50%;
             }
         }
         @keyframes moonAppear {
@@ -927,35 +883,44 @@
                 opacity: 0;
             }
         }
-        @keyframes surpriseAppear {
+        @keyframes envelopeAppear {
             0% {
                 opacity: 0;
                 transform:
-                    scale(.9);
+                    translateY(50px)
+                    scale(.7);
+            }
+            70% {
+                transform:
+                    translateY(-10px)
+                    scale(1.05);
             }
             100% {
                 opacity: 1;
                 transform:
+                    translateY(0)
                     scale(1);
             }
         }
-        @keyframes hintPulse {
+        @keyframes hintFloat {
             0%,
             100% {
-                opacity: .5;
+                transform:
+                    translateY(0);
             }
             50% {
-                opacity: 1;
+                transform:
+                    translateY(-8px);
             }
         }
-        @keyframes finalAppear {
+        @keyframes finalMessageAppear {
             0% {
                 opacity: 0;
                 transform:
-                    scale(.75)
+                    scale(.7)
                     translateY(30px);
             }
-            60% {
+            70% {
                 transform:
                     scale(1.04)
                     translateY(-5px);
@@ -970,9 +935,9 @@
     </style>
 </head>
 <body>
-    <!-- =================================
+    <!-- =========================================
          INTRO
-    ================================= -->
+    ========================================= -->
     <div id="intro">
         <div class="stars"></div>
         <div class="cute-stars">
@@ -985,38 +950,17 @@
             <div class="star star7">✦</div>
             <div class="star star8">✧</div>
         </div>
-        <!-- آیکون های مدرسه -->
         <div class="school-icons">
-            <div class="school-icon book">
-                📚
-            </div>
-            <div class="school-icon pencil">
-                ✏️
-            </div>
-            <div class="school-icon graduation">
-                🎓
-            </div>
-            <div class="school-icon math">
-                🧮
-            </div>
-            <div class="school-icon science">
-                🔬
-            </div>
-            <div class="school-icon notebook">
-                📓
-            </div>
-            <div class="school-icon pen">
-                🖊️
-            </div>
-            <div class="school-icon school">
-                🏫
-            </div>
-            <div class="school-icon calculator">
-                📐
-            </div>
-            <div class="school-icon microscope">
-                🧪
-            </div>
+            <div class="school-icon book">📚</div>
+            <div class="school-icon pencil">✏️</div>
+            <div class="school-icon graduation">🎓</div>
+            <div class="school-icon math">🧮</div>
+            <div class="school-icon science">🔬</div>
+            <div class="school-icon notebook">📓</div>
+            <div class="school-icon pen">🖊️</div>
+            <div class="school-icon school">🏫</div>
+            <div class="school-icon calculator">📐</div>
+            <div class="school-icon microscope">🧪</div>
         </div>
         <div class="moon"></div>
         <div class="ocean">
@@ -1030,9 +974,9 @@
             STARLIGHT
         </div>
     </div>
-    <!-- =================================
+    <!-- =========================================
          LOGIN
-    ================================= -->
+    ========================================= -->
     <div id="loginPage">
         <div class="container">
             <div class="login-icon">
@@ -1060,65 +1004,56 @@
             </div>
         </div>
     </div>
-    <!-- =================================
-         SECRET PAGE
-    ================================= -->
-    <div id="secretPage">
-        <div class="container">
-            <h1>
-                خوش اومدی به اولین سایت زندگی من😇❤️
-            </h1>
-            <div class="heart">
-                ❤️
-            </div>
-        </div>
-    </div>
-    <!-- =================================
-         CELEBRATION
-    ================================= -->
-    <div id="celebration"></div>
-    <!-- =================================
-         SURPRISE ENVELOPE
-    ================================= -->
-    <div id="surprise">
-        <div class="surprise-title">
-            یه چیزی واست دارم…
-        </div>
+    <!-- =========================================
+         SURPRISE
+    ========================================= -->
+    <div id="surprisePage">
         <div
-            class="envelope-wrapper"
-            id="envelopeWrapper"
-            onclick="openEnvelope()"
+            class="envelope-area"
+            id="envelopeArea"
         >
-            <div class="envelope">
-                <div class="letter"></div>
-                <div class="envelope-front"></div>
+            <div class="envelope-hint">
+                یه چیزی واست دارم… 💌
+            </div>
+            <div
+                class="envelope"
+                id="envelope"
+                onclick="openEnvelope()"
+            >
+                <div class="envelope-back"></div>
+                <div class="envelope-paper"></div>
                 <div class="envelope-flap"></div>
+                <div class="envelope-front"></div>
+                <div class="envelope-heart">
+                    ❤️
+                </div>
             </div>
         </div>
-        <div class="click-hint">
-            روی پاکت کلیک کن 💌
-        </div>
-    </div>
-    <!-- =================================
-         FINAL MESSAGE
-    ================================= -->
-    <div id="finalMessage">
-        <div class="final-card">
-            <div class="big-heart">
-                ❤️
+        <!-- =========================================
+             FINAL MESSAGE
+        ========================================= -->
+        <div id="finalMessage">
+            <div class="final-card">
+                <h1>
+                    خوش اومدی به اولین سایت زندگی من😇❤️
+                </h1>
+                <div class="final-heart">
+                    ❤️
+                </div>
             </div>
-            <h2>
-                خوش اومدی به اولین سایت زندگی من😇❤️
-            </h2>
         </div>
     </div>
-    <!-- =================================
+    <!-- =========================================
+         CELEBRATION
+    ========================================= -->
+    <div id="celebration"></div>
+    <!-- =========================================
          JAVASCRIPT
-    ================================= -->
+    ========================================= -->
     <script>
-        /* =================================
+        /* =========================================
            LOGIN
-        ================================= */
+        ========================================= */
         function login() {
             const username =
                 document
@@ -1136,27 +1071,38 @@
             ) {
                 document
                 .getElementById("loginPage")
-                .style.display = "none";
+                .style.display =
+                    "none";
                 document
-                .getElementById("secretPage")
-                .style.display = "flex";
+                .getElementById("surprisePage")
+                .style.display =
+                    "flex";
                 document
                 .getElementById("intro")
-                .style.display = "none";
+                .style.display =
+                    "none";
                 startCelebration();
+                setTimeout(
+                    function() {
+                        stopCelebration();
+                    },
+                    5500
+                );
             }
             else {
                 document
                 .getElementById("error")
-                .style.display = "block";
+                .style.display =
+                    "block";
             }
         }
-        /* =================================
+        /* =========================================
            CELEBRATION
-        ================================= */
+        ========================================= */
         function startCelebration() {
             const celebration =
-                document.getElementById("celebration");
+                document
+                .getElementById("celebration");
             celebration.style.display =
                 "block";
             const colors = [
@@ -1171,11 +1117,12 @@
             /* Confetti */
             for (
                 let i = 0;
-                i < 120;
+                i < 140;
                 i++
             ) {
                 const piece =
-                    document.createElement("div");
+                    document
+                    .createElement("div");
                 piece.className =
                     "confetti";
                 piece.style.left =
@@ -1188,16 +1135,26 @@
                         )
                     ];
                 piece.style.animationDuration =
-                    (2.5 + Math.random() * 3)
-                    + "s";
+                    (
+                        2.5 +
+                        Math.random() * 3
+                    ) + "s";
                 piece.style.animationDelay =
-                    (Math.random() * 1.5)
-                    + "s";
-                piece.style.transform =
-                    "rotate(" +
-                    Math.random() * 360 +
-                    "deg)";
-                celebration.appendChild(piece);
+                    (
+                        Math.random() * 1.2
+                    ) + "s";
+                piece.style.width =
+                    (
+                        7 +
+                        Math.random() * 9
+                    ) + "px";
+                piece.style.height =
+                    (
+                        10 +
+                        Math.random() * 15
+                    ) + "px";
+                celebration
+                .appendChild(piece);
             }
             /* قلب ها */
             const hearts = [
@@ -1210,11 +1167,12 @@
             ];
             for (
                 let i = 0;
-                i < 18;
+                i < 20;
                 i++
             ) {
                 const heart =
-                    document.createElement("div");
+                    document
+                    .createElement("div");
                 heart.className =
                     "celebration-heart";
                 heart.innerHTML =
@@ -1227,23 +1185,21 @@
                 heart.style.left =
                     Math.random() * 100 + "%";
                 heart.style.animationDelay =
-                    (Math.random() * 2)
-                    + "s";
-                heart.style.fontSize =
-                    (20 + Math.random() * 30)
-                    + "px";
-                celebration.appendChild(
-                    heart
-                );
+                    (
+                        Math.random() * 2
+                    ) + "s";
+                celebration
+                .appendChild(heart);
             }
             /* ستاره ها */
             for (
                 let i = 0;
-                i < 20;
+                i < 25;
                 i++
             ) {
                 const star =
-                    document.createElement("div");
+                    document
+                    .createElement("div");
                 star.className =
                     "celebration-star";
                 star.innerHTML =
@@ -1260,120 +1216,111 @@
                 star.style.left =
                     Math.random() * 100 + "%";
                 star.style.animationDelay =
-                    (Math.random() * 2)
-                    + "s";
-                celebration.appendChild(
-                    star
-                );
+                    (
+                        Math.random() * 2
+                    ) + "s";
+                celebration
+                .appendChild(star);
             }
-            /*
-             * بعد از 7 ثانیه
-             * جشن تمام می شود
-             * و پاکت ظاهر می شود
-             */
-            setTimeout(
-                function() {
-                    celebration.innerHTML =
-                        "";
-                    celebration.style.display =
-                        "none";
-                    document
-                    .getElementById("secretPage")
-                    .style.display = "none";
-                    document
-                    .getElementById("surprise")
-                    .classList.add("show");
-                },
-                7000
-            );
         }
-        /* =================================
+        /* =========================================
+           STOP CELEBRATION
+        ========================================= */
+        function stopCelebration() {
+            const celebration =
+                document
+                .getElementById("celebration");
+            celebration.style.display =
+                "none";
+            celebration.innerHTML =
+                "";
+        }
+        /* =========================================
            OPEN ENVELOPE
-        ================================= */
+        ========================================= */
         function openEnvelope() {
             const envelope =
                 document
-                .getElementById(
-                    "envelopeWrapper"
-                );
-            if (
-                envelope.classList.contains(
-                    "open"
-                )
-            ) {
-                return;
-            }
-            envelope.classList.add("open");
-            /*
-             * کمی صبر می کنیم تا
-             * باز شدن پاکت دیده شود
-             */
-            setTimeout(
-                function() {
-                    document
-                    .getElementById(
-                        "surprise"
-                    )
-                    .style.display =
-                        "none";
-                    document
-                    .getElementById(
-                        "finalMessage"
-                    )
-                    .classList.add("show");
-                    createFinalConfetti();
-                },
-                1300
-            );
-        }
-        /* =================================
-           FINAL SMALL CELEBRATION
-        ================================= */
-        function createFinalConfetti() {
+                .getElementById("envelope");
+            const envelopeArea =
+                document
+                .getElementById("envelopeArea");
             const finalMessage =
                 document
-                .getElementById(
-                    "finalMessage"
-                );
-            const colors = [
-                "#ff4f81",
-                "#ffcf4a",
-                "#54d6ff",
-                "#9b7bff",
-                "#62e68a",
-                "#ff8bd1"
+                .getElementById("finalMessage");
+            envelope
+            .classList
+            .add("open");
+            setTimeout(
+                function() {
+                    envelopeArea.style.display =
+                        "none";
+                    finalMessage.style.display =
+                        "flex";
+                    /* یک جشن کوچک دوباره */
+                    miniCelebration();
+                },
+                900
+            );
+        }
+        /* =========================================
+           MINI CELEBRATION
+        ========================================= */
+        function miniCelebration() {
+            const celebration =
+                document
+                .getElementById("celebration");
+            celebration.style.display =
+                "block";
+            const symbols = [
+                "❤️",
+                "💖",
+                "✨",
+                "🌟",
+                "💫",
+                "💕"
             ];
             for (
                 let i = 0;
-                i < 45;
+                i < 30;
                 i++
             ) {
-                const piece =
-                    document.createElement(
-                        "div"
-                    );
-                piece.className =
-                    "confetti";
-                piece.style.left =
-                    Math.random() * 100 + "%";
-                piece.style.background =
-                    colors[
+                const item =
+                    document
+                    .createElement("div");
+                item.className =
+                    Math.random() > .5
+                    ? "celebration-heart"
+                    : "celebration-star";
+                item.innerHTML =
+                    symbols[
                         Math.floor(
                             Math.random() *
-                            colors.length
+                            symbols.length
                         )
                     ];
-                piece.style.animationDuration =
-                    (2 + Math.random() * 2)
-                    + "s";
-                finalMessage.appendChild(
-                    piece
-                );
+                item.style.left =
+                    Math.random() * 100 + "%";
+                item.style.animationDelay =
+                    (
+                        Math.random() * 1.5
+                    ) + "s";
+                celebration
+                .appendChild(item);
             }
+            setTimeout(
+                function() {
+                    celebration.style.display =
+                        "none";
+                    celebration.innerHTML =
+                        "";
+                },
+                5000
+            );
         }
-        /* =================================
+        /* =========================================
            ENTER KEY
-        ================================= */
+        ========================================= */
         document
         .getElementById("password")
         .addEventListener(
