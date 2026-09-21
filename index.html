@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starlight</title>
-
     <style>
         * {
             box-sizing: border-box;
         }
-
         body {
             margin: 0;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #0f1020, #1d1633);
+            background: linear-gradient(
+                135deg,
+                #0f1020,
+                #1d1633
+            );
             font-family: Arial, sans-serif;
             color: white;
         }
-
         .container {
             width: 90%;
             max-width: 380px;
@@ -29,22 +30,23 @@
             border-radius: 25px;
             text-align: center;
             backdrop-filter: blur(15px);
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.35);
         }
-
         h1 {
             font-size: 38px;
             margin-bottom: 30px;
+            letter-spacing: 2px;
         }
-
         input {
             width: 100%;
             padding: 14px;
             margin: 8px 0;
             border: none;
             border-radius: 12px;
+            outline: none;
             font-size: 16px;
         }
-
         button {
             width: 100%;
             padding: 14px;
@@ -55,109 +57,121 @@
             color: #171326;
             font-size: 16px;
             font-weight: bold;
+            cursor: pointer;
         }
-
+        button:hover {
+            opacity: 0.9;
+        }
         #error {
             color: #ff8f8f;
             margin-top: 15px;
             display: none;
         }
-
         #secretPage {
             display: none;
         }
-
         .heart {
             font-size: 100px;
-            animation: heartbeat 1.2s infinite;
+            animation:
+                heartbeat 1.2s infinite;
         }
-
         .music {
             margin-top: 30px;
         }
-
         audio {
             width: 100%;
         }
-
         @keyframes heartbeat {
-            0% { transform: scale(1); }
-            15% { transform: scale(1.15); }
-            30% { transform: scale(1); }
-            45% { transform: scale(1.15); }
-            60% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+            15% {
+                transform: scale(1.15);
+            }
+            30% {
+                transform: scale(1);
+            }
+            45% {
+                transform: scale(1.15);
+            }
+            60% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
-
 <body>
-
-    <div class="container" id="loginPage">
-
-        <h1>Starlight</h1>
-
-        <input type="text" id="username" placeholder="Username">
-
-        <input type="password" id="password" placeholder="Password">
-
-        <button onclick="login()">Enter</button>
-
+    <!-- LOGIN PAGE -->
+    <div
+        class="container"
+        id="loginPage"
+    >
+        <h1>
+            Starlight
+        </h1>
+        <input
+            type="text"
+            id="username"
+            placeholder="Username"
+        >
+        <input
+            type="password"
+            id="password"
+            placeholder="Password"
+        >
+        <button
+            onclick="login()"
+        >
+            Enter
+        </button>
         <div id="error">
             Wrong username or password.
         </div>
-
     </div>
-
-
-    <div class="container" id="secretPage">
-
-        <h1>Welcome ❤️</h1>
-
+    <!-- SECRET PAGE -->
+    <div
+        class="container"
+        id="secretPage"
+    >
+        <h1>
+            Welcome ❤️
+        </h1>
         <div class="heart">
             ❤️
         </div>
-
         <div class="music">
-
             <audio controls>
-                <source src="song.mp3" type="audio/mpeg">
+                <source
+                    src="Ludwig van Beethoven - Moonlight Sonata.mp3"
+                    type="audio/mpeg"
+                >
+                Your browser does not support audio.
             </audio>
-
         </div>
-
     </div>
-
-
     <script>
-
         function login() {
-
             const username =
                 document.getElementById("username").value;
-
             const password =
                 document.getElementById("password").value;
-
             if (
-                username === "Mohammad.n" &&
-                password === "Mohammad.n"
+                username === "Starlight" &&
+                password === "Starlight"
             ) {
-
                 document.getElementById("loginPage").style.display =
                     "none";
-
                 document.getElementById("secretPage").style.display =
                     "block";
-
-            } else {
-
+            }
+            else {
                 document.getElementById("error").style.display =
                     "block";
-
             }
         }
-
     </script>
-
 </body>
 </html>
