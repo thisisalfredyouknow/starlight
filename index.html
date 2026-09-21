@@ -2,8 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starlight</title>
     <style>
         * {
@@ -19,10 +18,10 @@
         body {
             background: #050817;
             color: white;
-            font-family: Arial, Tahoma, sans-serif;
+            font-family: Tahoma, Arial, sans-serif;
         }
         /* =========================
-           NIGHT INTRO
+           INTRO
         ========================= */
         #intro {
             position: fixed;
@@ -32,14 +31,16 @@
             background:
                 linear-gradient(
                     to bottom,
-                    #030615 0%,
-                    #0b1230 48%,
-                    #111936 100%
+                    #020514 0%,
+                    #08132f 48%,
+                    #101d3d 100%
                 );
             animation: introFade 5s forwards;
             pointer-events: none;
         }
-        /* Stars */
+        /* =========================
+           STARS
+        ========================= */
         .stars {
             position: absolute;
             inset: 0;
@@ -47,29 +48,146 @@
                 radial-gradient(
                     circle,
                     white 1px,
-                    transparent 1px
+                    transparent 1.5px
                 ),
                 radial-gradient(
                     circle,
                     white 1px,
-                    transparent 1px
+                    transparent 1.5px
                 ),
                 radial-gradient(
                     circle,
-                    white 1px,
-                    transparent 1px
+                    white 1.5px,
+                    transparent 2px
                 );
             background-size:
-                150px 150px,
-                220px 220px,
-                310px 310px;
+                90px 90px,
+                140px 140px,
+                220px 220px;
             background-position:
-                20px 30px,
-                90px 120px,
-                180px 60px;
-            opacity: 0.55;
+                10px 20px,
+                60px 80px,
+                120px 40px;
+            opacity: 0.75;
+            animation: starsMove 8s linear infinite;
         }
-        /* Moon */
+        /* =========================
+           CUTE STARS
+        ========================= */
+        .cute-stars {
+            position: absolute;
+            inset: 0;
+        }
+        .star {
+            position: absolute;
+            color: #ffffff;
+            font-size: 16px;
+            text-shadow:
+                0 0 8px rgba(255,255,255,0.9);
+            animation:
+                twinkle 2s ease-in-out infinite;
+        }
+        .star1 {
+            top: 12%;
+            left: 15%;
+            animation-delay: 0.2s;
+        }
+        .star2 {
+            top: 25%;
+            left: 82%;
+            animation-delay: 1s;
+        }
+        .star3 {
+            top: 42%;
+            left: 10%;
+            animation-delay: 1.7s;
+        }
+        .star4 {
+            top: 18%;
+            left: 65%;
+            animation-delay: 0.8s;
+        }
+        .star5 {
+            top: 48%;
+            left: 88%;
+            animation-delay: 1.3s;
+        }
+        .star6 {
+            top: 8%;
+            left: 42%;
+            animation-delay: 0.5s;
+        }
+        .star7 {
+            top: 35%;
+            left: 35%;
+            animation-delay: 1.5s;
+        }
+        .star8 {
+            top: 55%;
+            left: 72%;
+            animation-delay: 0.3s;
+        }
+        /* =========================
+           SCHOOL ICONS
+        ========================= */
+        .school-icons {
+            position: absolute;
+            inset: 0;
+        }
+        .school-icon {
+            position: absolute;
+            font-size: 27px;
+            opacity: 0.85;
+            filter:
+                drop-shadow(
+                    0 0 8px rgba(255,255,255,0.25)
+                );
+            animation:
+                floatIcon 5s ease-in-out infinite;
+        }
+        .book {
+            top: 20%;
+            left: 8%;
+            animation-delay: 0s;
+        }
+        .pencil {
+            top: 32%;
+            right: 9%;
+            animation-delay: 1s;
+        }
+        .graduation {
+            top: 45%;
+            left: 18%;
+            animation-delay: 2s;
+        }
+        .math {
+            top: 18%;
+            right: 25%;
+            animation-delay: 1.5s;
+        }
+        .science {
+            top: 38%;
+            right: 18%;
+            animation-delay: 0.7s;
+        }
+        .notebook {
+            top: 50%;
+            left: 78%;
+            animation-delay: 2.5s;
+        }
+        .pen {
+            top: 12%;
+            left: 28%;
+            animation-delay: 1.8s;
+        }
+        .school {
+            top: 52%;
+            left: 5%;
+            animation-delay: 0.8s;
+        }
+        /* =========================
+           MOON
+        ========================= */
         .moon {
             position: absolute;
             width: 145px;
@@ -84,14 +202,17 @@
                 );
             top: 15%;
             left: 50%;
-            transform: translateX(-50%);
+            transform:
+                translateX(-50%);
             box-shadow:
                 0 0 25px rgba(255,255,230,0.8),
                 0 0 70px rgba(190,210,255,0.35);
             animation:
                 moonAppear 3s ease-out forwards;
         }
-        /* Ocean */
+        /* =========================
+           OCEAN
+        ========================= */
         .ocean {
             position: absolute;
             bottom: 0;
@@ -112,7 +233,8 @@
             left: 50%;
             width: 100px;
             height: 100%;
-            transform: translateX(-50%);
+            transform:
+                translateX(-50%);
             background:
                 linear-gradient(
                     to bottom,
@@ -154,7 +276,9 @@
             animation-delay: 0.7s;
             opacity: 0.25;
         }
-        /* Intro title */
+        /* =========================
+           INTRO TITLE
+        ========================= */
         .introText {
             position: absolute;
             left: 50%;
@@ -162,7 +286,9 @@
             transform:
                 translate(-50%, -50%);
             text-align: center;
-            font-family: Arial, sans-serif;
+            font-family:
+                Arial,
+                sans-serif;
             font-size: 34px;
             letter-spacing: 7px;
             direction: ltr;
@@ -251,10 +377,11 @@
                 Tahoma,
                 Arial,
                 sans-serif;
-            font-size: 34px;
+            font-size: 30px;
             direction: rtl;
             letter-spacing: 0;
-            margin-bottom: 25px;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
         .heart {
             font-size: 100px;
@@ -305,6 +432,42 @@
                     rotate(1deg);
             }
         }
+        @keyframes starsMove {
+            from {
+                transform:
+                    translateY(0);
+            }
+            to {
+                transform:
+                    translateY(15px);
+            }
+        }
+        @keyframes twinkle {
+            0%,
+            100% {
+                opacity: 0.35;
+                transform:
+                    scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform:
+                    scale(1.3);
+            }
+        }
+        @keyframes floatIcon {
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(-4deg);
+            }
+            50% {
+                transform:
+                    translateY(-18px)
+                    rotate(5deg);
+            }
+        }
         @keyframes textAppear {
             0% {
                 opacity: 0;
@@ -342,22 +505,28 @@
         }
         @keyframes heartbeat {
             0% {
-                transform: scale(1);
+                transform:
+                    scale(1);
             }
             15% {
-                transform: scale(1.15);
+                transform:
+                    scale(1.15);
             }
             30% {
-                transform: scale(1);
+                transform:
+                    scale(1);
             }
             45% {
-                transform: scale(1.15);
+                transform:
+                    scale(1.15);
             }
             60% {
-                transform: scale(1);
+                transform:
+                    scale(1);
             }
             100% {
-                transform: scale(1);
+                transform:
+                    scale(1);
             }
         }
     </style>
@@ -368,7 +537,47 @@
     ========================= -->
     <div id="intro">
         <div class="stars"></div>
+        <!-- Cute stars -->
+        <div class="cute-stars">
+            <div class="star star1">✦</div>
+            <div class="star star2">✧</div>
+            <div class="star star3">★</div>
+            <div class="star star4">✦</div>
+            <div class="star star5">✧</div>
+            <div class="star star6">★</div>
+            <div class="star star7">✦</div>
+            <div class="star star8">✧</div>
+        </div>
+        <!-- School icons -->
+        <div class="school-icons">
+            <div class="school-icon book">
+                📚
+            </div>
+            <div class="school-icon pencil">
+                ✏️
+            </div>
+            <div class="school-icon graduation">
+                🎓
+            </div>
+            <div class="school-icon math">
+                🧮
+            </div>
+            <div class="school-icon science">
+                🔬
+            </div>
+            <div class="school-icon notebook">
+                📓
+            </div>
+            <div class="school-icon pen">
+                🖊️
+            </div>
+            <div class="school-icon school">
+                🏫
+            </div>
+        </div>
+        <!-- Moon -->
         <div class="moon"></div>
+        <!-- Ocean -->
         <div class="ocean">
             <div class="reflection"></div>
             <div class="wave wave1"></div>
@@ -413,7 +622,7 @@
     <div id="secretPage">
         <div class="container">
             <h1>
-                خوش اومدی ❤️
+                خوش اومدی به اولین سایت زندگی من 😇❤️
             </h1>
             <div class="heart">
                 ❤️
