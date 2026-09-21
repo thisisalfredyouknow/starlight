@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starlight</title>
+    <!-- فونت وزیر -->
     <style>
+        @font-face {
+            font-family: "Vazir";
+            src: url("https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/Vazir.woff2") format("woff2");
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: "Vazir";
+            src: url("https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/Vazir-Bold.woff2") format("woff2");
+            font-weight: bold;
+        }
         * {
             box-sizing: border-box;
         }
@@ -16,162 +27,158 @@
             overflow: hidden;
         }
         body {
-            background: #050817;
+            font-family: "Vazir", Tahoma, Arial, sans-serif;
             color: white;
-            font-family: Tahoma, Arial, sans-serif;
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff9a9e,
+                    #fad0c4,
+                    #a18cd1,
+                    #84fab0,
+                    #8fd3f4
+                );
+            background-size: 400% 400%;
+            animation: colorfulBackground 12s ease infinite;
         }
-        /* =========================
+        /* =================================
            INTRO
-        ========================= */
+        ================================= */
         #intro {
             position: fixed;
             inset: 0;
-            z-index: 10;
+            z-index: 100;
             overflow: hidden;
             background:
                 linear-gradient(
-                    to bottom,
-                    #020514 0%,
-                    #08132f 48%,
-                    #101d3d 100%
+                    180deg,
+                    #111c4e 0%,
+                    #392b68 45%,
+                    #f28bb4 100%
                 );
-            animation: introFade 5s forwards;
+            animation: introFade 5.5s forwards;
             pointer-events: none;
         }
-        /* =========================
-           STARS
-        ========================= */
         .stars {
             position: absolute;
             inset: 0;
             background-image:
-                radial-gradient(
-                    circle,
-                    white 1px,
-                    transparent 1.5px
-                ),
-                radial-gradient(
-                    circle,
-                    white 1px,
-                    transparent 1.5px
-                ),
-                radial-gradient(
-                    circle,
-                    white 1.5px,
-                    transparent 2px
-                );
+                radial-gradient(circle, white 1px, transparent 2px),
+                radial-gradient(circle, #ffe66d 1px, transparent 2px),
+                radial-gradient(circle, #ff9de2 1.5px, transparent 2px);
             background-size:
-                90px 90px,
-                140px 140px,
-                220px 220px;
+                80px 80px,
+                130px 130px,
+                190px 190px;
             background-position:
                 10px 20px,
-                60px 80px,
-                120px 40px;
-            opacity: 0.75;
-            animation: starsMove 8s linear infinite;
+                50px 70px,
+                120px 30px;
+            opacity: 0.85;
+            animation: starsMove 7s linear infinite;
         }
-        /* =========================
-           CUTE STARS
-        ========================= */
+        /* ستاره های کیوت */
         .cute-stars {
             position: absolute;
             inset: 0;
         }
         .star {
             position: absolute;
-            color: #ffffff;
-            font-size: 16px;
-            text-shadow:
-                0 0 8px rgba(255,255,255,0.9);
+            font-size: 22px;
             animation:
                 twinkle 2s ease-in-out infinite;
         }
         .star1 {
-            top: 12%;
-            left: 15%;
-            animation-delay: 0.2s;
+            top: 10%;
+            left: 12%;
+            color: #ffe66d;
         }
         .star2 {
-            top: 25%;
+            top: 23%;
             left: 82%;
-            animation-delay: 1s;
+            color: #ff9de2;
+            animation-delay: .7s;
         }
         .star3 {
             top: 42%;
-            left: 10%;
-            animation-delay: 1.7s;
+            left: 7%;
+            color: #8ffcff;
+            animation-delay: 1.3s;
         }
         .star4 {
-            top: 18%;
+            top: 15%;
             left: 65%;
-            animation-delay: 0.8s;
+            color: #ffffff;
+            animation-delay: .4s;
         }
         .star5 {
             top: 48%;
-            left: 88%;
-            animation-delay: 1.3s;
+            left: 89%;
+            color: #ffe66d;
+            animation-delay: 1.1s;
         }
         .star6 {
-            top: 8%;
+            top: 7%;
             left: 42%;
-            animation-delay: 0.5s;
+            color: #ffb6f9;
+            animation-delay: 1.8s;
         }
         .star7 {
-            top: 35%;
-            left: 35%;
-            animation-delay: 1.5s;
+            top: 37%;
+            left: 33%;
+            color: #9dffcf;
+            animation-delay: .9s;
         }
         .star8 {
             top: 55%;
             left: 72%;
-            animation-delay: 0.3s;
+            color: #8fd3ff;
+            animation-delay: 1.5s;
         }
-        /* =========================
+        /* =================================
            SCHOOL ICONS
-        ========================= */
+        ================================= */
         .school-icons {
             position: absolute;
             inset: 0;
         }
         .school-icon {
             position: absolute;
-            font-size: 27px;
-            opacity: 0.85;
+            font-size: 32px;
+            opacity: .95;
             filter:
                 drop-shadow(
-                    0 0 8px rgba(255,255,255,0.25)
+                    0 0 8px rgba(255,255,255,.35)
                 );
             animation:
                 floatIcon 5s ease-in-out infinite;
         }
         .book {
-            top: 20%;
+            top: 18%;
             left: 8%;
-            animation-delay: 0s;
         }
         .pencil {
-            top: 32%;
-            right: 9%;
+            top: 31%;
+            right: 8%;
             animation-delay: 1s;
         }
         .graduation {
-            top: 45%;
-            left: 18%;
+            top: 46%;
+            left: 17%;
             animation-delay: 2s;
         }
         .math {
-            top: 18%;
+            top: 17%;
             right: 25%;
             animation-delay: 1.5s;
         }
         .science {
             top: 38%;
             right: 18%;
-            animation-delay: 0.7s;
+            animation-delay: .7s;
         }
         .notebook {
-            top: 50%;
+            top: 51%;
             left: 78%;
             animation-delay: 2.5s;
         }
@@ -181,13 +188,23 @@
             animation-delay: 1.8s;
         }
         .school {
-            top: 52%;
+            top: 53%;
             left: 5%;
-            animation-delay: 0.8s;
+            animation-delay: .8s;
         }
-        /* =========================
+        .calculator {
+            top: 28%;
+            left: 22%;
+            animation-delay: 1.2s;
+        }
+        .microscope {
+            top: 55%;
+            right: 30%;
+            animation-delay: 2.2s;
+        }
+        /* =================================
            MOON
-        ========================= */
+        ================================= */
         .moon {
             position: absolute;
             width: 145px;
@@ -197,22 +214,21 @@
                 radial-gradient(
                     circle at 35% 35%,
                     #ffffff,
-                    #f5f2df 55%,
-                    #d8d4bd 100%
+                    #fff8d8 55%,
+                    #ffdca8 100%
                 );
-            top: 15%;
+            top: 13%;
             left: 50%;
-            transform:
-                translateX(-50%);
+            transform: translateX(-50%);
             box-shadow:
-                0 0 25px rgba(255,255,230,0.8),
-                0 0 70px rgba(190,210,255,0.35);
+                0 0 30px rgba(255,255,255,.9),
+                0 0 80px rgba(255,210,120,.45);
             animation:
                 moonAppear 3s ease-out forwards;
         }
-        /* =========================
+        /* =================================
            OCEAN
-        ========================= */
+        ================================= */
         .ocean {
             position: absolute;
             bottom: 0;
@@ -222,31 +238,29 @@
             background:
                 linear-gradient(
                     to bottom,
-                    #101b3a,
-                    #071027
+                    #303b80,
+                    #152052,
+                    #0b1232
                 );
         }
-        /* Moon reflection */
         .reflection {
             position: absolute;
             top: 0;
             left: 50%;
             width: 100px;
             height: 100%;
-            transform:
-                translateX(-50%);
+            transform: translateX(-50%);
             background:
                 linear-gradient(
                     to bottom,
-                    rgba(255,255,230,0.35),
-                    rgba(255,255,230,0.08),
+                    rgba(255,255,210,.5),
+                    rgba(255,180,220,.15),
                     transparent
                 );
             filter: blur(10px);
             animation:
                 reflectionMove 2.5s ease-in-out infinite;
         }
-        /* Waves */
         .wave {
             position: absolute;
             left: -10%;
@@ -254,7 +268,7 @@
             height: 70px;
             border-radius: 50%;
             border-top:
-                2px solid rgba(255,255,255,0.13);
+                2px solid rgba(255,255,255,.18);
             animation:
                 waveMove 5s ease-in-out infinite;
         }
@@ -264,21 +278,18 @@
         .wave2 {
             top: 38%;
             animation-delay: 1s;
-            opacity: 0.6;
         }
         .wave3 {
             top: 60%;
             animation-delay: 2s;
-            opacity: 0.4;
         }
         .wave4 {
             top: 80%;
-            animation-delay: 0.7s;
-            opacity: 0.25;
+            animation-delay: .7s;
         }
-        /* =========================
-           INTRO TITLE
-        ========================= */
+        /* =================================
+           INTRO TEXT
+        ================================= */
         .introText {
             position: absolute;
             left: 50%;
@@ -286,19 +297,19 @@
             transform:
                 translate(-50%, -50%);
             text-align: center;
-            font-family:
-                Arial,
-                sans-serif;
-            font-size: 34px;
-            letter-spacing: 7px;
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+            letter-spacing: 8px;
             direction: ltr;
             opacity: 0;
+            text-shadow:
+                0 0 15px rgba(255,255,255,.7);
             animation:
                 textAppear 2s 1.5s forwards;
         }
-        /* =========================
-           LOGIN
-        ========================= */
+        /* =================================
+           LOGIN PAGE
+        ================================= */
         #loginPage {
             position: absolute;
             inset: 0;
@@ -307,96 +318,188 @@
             align-items: center;
             opacity: 0;
             animation:
-                loginAppear 1.5s 4.5s forwards;
+                loginAppear 1.5s 4.8s forwards;
         }
         .container {
             width: 90%;
-            max-width: 380px;
+            max-width: 390px;
             padding: 35px;
             background:
-                rgba(255,255,255,0.08);
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,.28),
+                    rgba(255,255,255,.10)
+                );
             border:
-                1px solid rgba(255,255,255,0.12);
-            border-radius: 25px;
+                2px solid rgba(255,255,255,.35);
+            border-radius: 30px;
             text-align: center;
             backdrop-filter:
-                blur(18px);
+                blur(20px);
             box-shadow:
-                0 20px 60px rgba(0,0,0,0.45);
+                0 25px 70px rgba(55,30,100,.3);
+        }
+        .login-icon {
+            font-size: 55px;
+            margin-bottom: 5px;
+            animation:
+                floatIcon 3s ease-in-out infinite;
         }
         h1 {
             font-size: 38px;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
+            margin: 5px 0 28px;
         }
         input {
             width: 100%;
-            padding: 14px;
+            padding: 15px;
             margin: 8px 0;
-            border: none;
-            border-radius: 12px;
+            border: 2px solid transparent;
+            border-radius: 15px;
             outline: none;
+            font-family: "Vazir", Tahoma, sans-serif;
             font-size: 16px;
-            direction: ltr;
-            text-align: left;
+            direction: rtl;
+            text-align: right;
+            background: rgba(255,255,255,.9);
+            color: #282044;
+            transition: .3s;
+        }
+        input:focus {
+            border-color: #ff82c8;
+            transform:
+                translateY(-2px);
+            box-shadow:
+                0 5px 20px rgba(255,100,190,.25);
         }
         button {
             width: 100%;
-            padding: 14px;
+            padding: 15px;
             margin-top: 15px;
             border: none;
-            border-radius: 12px;
-            background: white;
-            color: #171326;
-            font-size: 16px;
+            border-radius: 15px;
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff6fb5,
+                    #9b7bff,
+                    #52c8ff
+                );
+            color: white;
+            font-family: "Vazir", Tahoma, sans-serif;
+            font-size: 17px;
             font-weight: bold;
             cursor: pointer;
-            transition: 0.3s;
+            box-shadow:
+                0 8px 25px rgba(150,90,220,.35);
+            transition: .3s;
         }
         button:hover {
-            transform: scale(1.03);
-            opacity: 0.9;
+            transform:
+                translateY(-3px)
+                scale(1.02);
         }
         #error {
-            color: #ff8f8f;
+            color: #ffdddd;
             margin-top: 15px;
             display: none;
+            font-size: 14px;
         }
-        /* =========================
+        /* =================================
            SECRET PAGE
-        ========================= */
+        ================================= */
         #secretPage {
             position: absolute;
             inset: 0;
             display: none;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff9a9e,
+                    #fad0c4,
+                    #a18cd1,
+                    #84fab0,
+                    #8fd3f4
+                );
+            background-size: 400% 400%;
+            animation:
+                colorfulBackground 10s ease infinite;
+        }
+        #secretPage .container {
+            position: relative;
+            z-index: 5;
         }
         #secretPage h1 {
             font-family:
+                "Vazir",
                 Tahoma,
                 Arial,
                 sans-serif;
-            font-size: 30px;
-            direction: rtl;
+            font-size: 28px;
+            line-height: 2;
             letter-spacing: 0;
-            line-height: 1.8;
-            margin-bottom: 20px;
+            margin: 0 0 20px;
         }
         .heart {
             font-size: 100px;
-            direction: ltr;
             animation:
                 heartbeat 1.2s infinite;
         }
-        /* =========================
+        /* =================================
+           CELEBRATION
+        ================================= */
+        #celebration {
+            position: fixed;
+            inset: 0;
+            z-index: 20;
+            pointer-events: none;
+            overflow: hidden;
+            display: none;
+        }
+        .confetti {
+            position: absolute;
+            top: -30px;
+            width: 12px;
+            height: 20px;
+            opacity: .95;
+            animation:
+                confettiFall linear forwards;
+        }
+        .celebration-heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 30px;
+            animation:
+                heartFloat 4s ease-out forwards;
+        }
+        .celebration-star {
+            position: absolute;
+            bottom: -40px;
+            font-size: 25px;
+            animation:
+                starFloat 3.5s ease-out forwards;
+        }
+        /* =================================
            ANIMATIONS
-        ========================= */
+        ================================= */
+        @keyframes colorfulBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
         @keyframes moonAppear {
             0% {
                 transform:
                     translateX(-50%)
-                    scale(0.3);
+                    scale(.3);
                 opacity: 0;
             }
             100% {
@@ -411,7 +514,7 @@
             100% {
                 transform:
                     translateX(-50%)
-                    scaleX(0.8);
+                    scaleX(.8);
             }
             50% {
                 transform:
@@ -424,7 +527,7 @@
             100% {
                 transform:
                     translateX(-2%)
-                    rotate(0deg);
+                    rotate(0);
             }
             50% {
                 transform:
@@ -445,9 +548,9 @@
         @keyframes twinkle {
             0%,
             100% {
-                opacity: 0.35;
+                opacity: .35;
                 transform:
-                    scale(0.8);
+                    scale(.8);
             }
             50% {
                 opacity: 1;
@@ -504,7 +607,8 @@
             }
         }
         @keyframes heartbeat {
-            0% {
+            0%,
+            100% {
                 transform:
                     scale(1);
             }
@@ -524,20 +628,63 @@
                 transform:
                     scale(1);
             }
+        }
+        @keyframes confettiFall {
+            0% {
+                transform:
+                    translateY(-30px)
+                    rotate(0deg);
+            }
             100% {
                 transform:
-                    scale(1);
+                    translateY(110vh)
+                    rotate(720deg);
+            }
+        }
+        @keyframes heartFloat {
+            0% {
+                transform:
+                    translateY(0)
+                    scale(.5);
+                opacity: 0;
+            }
+            15% {
+                opacity: 1;
+            }
+            100% {
+                transform:
+                    translateY(-110vh)
+                    scale(1.4)
+                    rotate(25deg);
+                opacity: 0;
+            }
+        }
+        @keyframes starFloat {
+            0% {
+                transform:
+                    translateY(0)
+                    scale(.5);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            100% {
+                transform:
+                    translateY(-100vh)
+                    rotate(360deg)
+                    scale(1.5);
+                opacity: 0;
             }
         }
     </style>
 </head>
 <body>
     <!-- =========================
-         NIGHT INTRO
+         INTRO
     ========================= -->
     <div id="intro">
         <div class="stars"></div>
-        <!-- Cute stars -->
         <div class="cute-stars">
             <div class="star star1">✦</div>
             <div class="star star2">✧</div>
@@ -548,36 +695,20 @@
             <div class="star star7">✦</div>
             <div class="star star8">✧</div>
         </div>
-        <!-- School icons -->
+        <!-- آیکون های مدرسه -->
         <div class="school-icons">
-            <div class="school-icon book">
-                📚
-            </div>
-            <div class="school-icon pencil">
-                ✏️
-            </div>
-            <div class="school-icon graduation">
-                🎓
-            </div>
-            <div class="school-icon math">
-                🧮
-            </div>
-            <div class="school-icon science">
-                🔬
-            </div>
-            <div class="school-icon notebook">
-                📓
-            </div>
-            <div class="school-icon pen">
-                🖊️
-            </div>
-            <div class="school-icon school">
-                🏫
-            </div>
+            <div class="school-icon book">📚</div>
+            <div class="school-icon pencil">✏️</div>
+            <div class="school-icon graduation">🎓</div>
+            <div class="school-icon math">🧮</div>
+            <div class="school-icon science">🔬</div>
+            <div class="school-icon notebook">📓</div>
+            <div class="school-icon pen">🖊️</div>
+            <div class="school-icon school">🏫</div>
+            <div class="school-icon calculator">📐</div>
+            <div class="school-icon microscope">🧪</div>
         </div>
-        <!-- Moon -->
         <div class="moon"></div>
-        <!-- Ocean -->
         <div class="ocean">
             <div class="reflection"></div>
             <div class="wave wave1"></div>
@@ -590,29 +721,32 @@
         </div>
     </div>
     <!-- =========================
-         LOGIN PAGE
+         LOGIN
     ========================= -->
     <div id="loginPage">
         <div class="container">
+            <div class="login-icon">
+                🎓
+            </div>
             <h1>
                 Starlight
             </h1>
             <input
                 type="text"
                 id="username"
-                placeholder="Username"
+                placeholder="نام کاربری"
                 autocomplete="off"
             >
             <input
                 type="password"
                 id="password"
-                placeholder="Password"
+                placeholder="رمز عبور"
             >
             <button onclick="login()">
-                Enter
+                ورود ✨
             </button>
             <div id="error">
-                Wrong username or password.
+                نام کاربری یا رمز عبور اشتباه هست.
             </div>
         </div>
     </div>
@@ -622,13 +756,17 @@
     <div id="secretPage">
         <div class="container">
             <h1>
-                خوش اومدی به اولین سایت زندگی من 😇❤️
+                خوش اومدی به اولین سایت زندگی من😇❤️
             </h1>
             <div class="heart">
                 ❤️
             </div>
         </div>
     </div>
+    <!-- =========================
+         CELEBRATION
+    ========================= -->
+    <div id="celebration"></div>
     <!-- =========================
          JAVASCRIPT
     ========================= -->
@@ -657,6 +795,7 @@
                 document
                 .getElementById("intro")
                 .style.display = "none";
+                startCelebration();
             }
             else {
                 document
@@ -664,13 +803,125 @@
                 .style.display = "block";
             }
         }
-        /* Enter key */
+        /* =================================
+           جشن بعد از ورود
+        ================================= */
+        function startCelebration() {
+            const celebration =
+                document.getElementById("celebration");
+            celebration.style.display = "block";
+            /* Confetti */
+            const colors = [
+                "#ff4f81",
+                "#ffcf4a",
+                "#54d6ff",
+                "#9b7bff",
+                "#62e68a",
+                "#ff8bd1",
+                "#ffffff"
+            ];
+            for (
+                let i = 0;
+                i < 120;
+                i++
+            ) {
+                const piece =
+                    document.createElement("div");
+                piece.className = "confetti";
+                piece.style.left =
+                    Math.random() * 100 + "%";
+                piece.style.background =
+                    colors[
+                        Math.floor(
+                            Math.random() *
+                            colors.length
+                        )
+                    ];
+                piece.style.animationDuration =
+                    (2.5 + Math.random() * 3) + "s";
+                piece.style.animationDelay =
+                    (Math.random() * 1.5) + "s";
+                piece.style.transform =
+                    "rotate(" +
+                    Math.random() * 360 +
+                    "deg)";
+                celebration.appendChild(piece);
+            }
+            /* قلب ها */
+            const hearts = [
+                "❤️",
+                "💖",
+                "💗",
+                "💜",
+                "💙",
+                "💛"
+            ];
+            for (
+                let i = 0;
+                i < 18;
+                i++
+            ) {
+                const heart =
+                    document.createElement("div");
+                heart.className =
+                    "celebration-heart";
+                heart.innerHTML =
+                    hearts[
+                        Math.floor(
+                            Math.random() *
+                            hearts.length
+                        )
+                    ];
+                heart.style.left =
+                    Math.random() * 100 + "%";
+                heart.style.animationDelay =
+                    (Math.random() * 2) + "s";
+                heart.style.fontSize =
+                    (20 + Math.random() * 30) + "px";
+                celebration.appendChild(heart);
+            }
+            /* ستاره ها */
+            for (
+                let i = 0;
+                i < 20;
+                i++
+            ) {
+                const star =
+                    document.createElement("div");
+                star.className =
+                    "celebration-star";
+                star.innerHTML =
+                    ["⭐", "✨", "🌟", "💫"][
+                        Math.floor(
+                            Math.random() * 4
+                        )
+                    ];
+                star.style.left =
+                    Math.random() * 100 + "%";
+                star.style.animationDelay =
+                    (Math.random() * 2) + "s";
+                celebration.appendChild(star);
+            }
+            /* پاک کردن عناصر بعد از پایان جشن */
+            setTimeout(
+                function() {
+                    celebration.innerHTML = "";
+                    celebration.style.display = "none";
+                },
+                7000
+            );
+        }
+        /* =================================
+           Enter برای ورود
+        ================================= */
         document
         .getElementById("password")
         .addEventListener(
             "keydown",
             function(event) {
-                if (event.key === "Enter") {
+                if (
+                    event.key === "Enter"
+                ) {
                     login();
                 }
             }
